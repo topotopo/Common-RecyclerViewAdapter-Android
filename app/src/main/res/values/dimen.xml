@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="feed_img_height">190dp</dimen>
+
+    <dimen name="feed_margin_horizontal">23dp</dimen>
+    <dimen name="feed_margin_vertical">20dp</dimen>
+    <dimen name="feed_item_space">20dp</dimen>
+    <dimen name="feed_margin_components">4dp</dimen>
+
+    <dimen name="text_heading">18sp</dimen>
+    <dimen name="text_body">12sp</dimen>
+</resources>
