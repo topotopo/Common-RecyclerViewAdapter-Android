@@ -42,7 +42,7 @@ class FeedFragment : Fragment(), KoinComponent {
         super.onViewCreated(view, savedInstanceState)
 
         adapter = GenericAdapter(sampleMovieList, BR.data)
-        adapter.onItemClickListener = { pos, _ ->
+        adapter.onItemClickListener = { pos, data, view ->
             Toast.makeText(context, "Item clicked $pos", Toast.LENGTH_LONG).show()
         }
         binding.rvFeed.layoutManager = LinearLayoutManager(context)
