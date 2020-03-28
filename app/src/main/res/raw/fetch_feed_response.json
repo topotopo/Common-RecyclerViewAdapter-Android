@@ -1,0 +1,22 @@
+{
+  "feed": [
+    {
+      "id": "0",
+      "title": "Parasite",
+      "imageUrl": "",
+      "description": "\"All unemployed, Ki-taek and his family take peculiar interest in the wealthy and glamorous Parks, as they ingratiate themselves into their lives and get entangled in an unexpected incident.\"",
+      "type": "movie"
+    },
+    {
+      "id": "1",
+      "title": "\"Golden Mile Complex: preserve or demolish?\"",
+      "description": "\"The Golden Mile Complex has been put up for sale since Oct 31 last year for S\\$800 million, after eighty percent of its owners agreed to have an en bloc sale.\"",
+      "type": "status"
+    },
+    {
+      "id": "2",
+      "title": "\"Shoutout example\"",
+      "type": "shoutout"
+    }
+  ]
+}

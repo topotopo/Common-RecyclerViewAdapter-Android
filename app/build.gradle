@@ -27,12 +27,19 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            buildConfigField "Boolean", "IS_MOCK", "true"
+        }
     }
     dataBinding {
         enabled = true
     }
     repositories {
         jcenter()
+    }
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
     }
 }
 
@@ -57,8 +64,9 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
     //Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
-    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+    implementation "com.squareup.retrofit2:retrofit-mock:2.7.1"
 
     //Coroutine Scope
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
