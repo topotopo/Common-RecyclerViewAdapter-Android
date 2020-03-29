@@ -4,19 +4,34 @@
       "id": "0",
       "title": "Parasite",
       "imageUrl": "",
-      "description": "\"All unemployed, Ki-taek and his family take peculiar interest in the wealthy and glamorous Parks, as they ingratiate themselves into their lives and get entangled in an unexpected incident.\"",
+      "description": "All unemployed, Ki-taek and his family take peculiar interest in the wealthy and glamorous Parks, as they ingratiate themselves into their lives and get entangled in an unexpected incident.",
       "type": "movie"
     },
     {
       "id": "1",
-      "title": "\"Golden Mile Complex: preserve or demolish?\"",
-      "description": "\"The Golden Mile Complex has been put up for sale since Oct 31 last year for S\\$800 million, after eighty percent of its owners agreed to have an en bloc sale.\"",
+      "title": "Golden Mile Complex: preserve or demolish?",
+      "description": "The Golden Mile Complex has been put up for sale since Oct 31 last year for S\\$800 million, after eighty percent of its owners agreed to have an en bloc sale.",
       "type": "status"
     },
     {
       "id": "2",
-      "title": "\"Shoutout example\"",
-      "type": "shoutout"
+      "title": "Little Women",
+      "imageUrl": "",
+      "description": "Jo March reflects back and forth on her life, telling the beloved story of the March sisters - four young women each determined to live life on their own terms.",
+      "type": "movie"
+    },
+    {
+      "id": "3",
+      "title": "1917",
+      "imageUrl": "",
+      "description": "Two young British soldiers during the First World War are given an impossible mission: deliver a message deep in enemy territory that will stop 1,600 men, and one of the soldiers' brothers, from walking straight into a deadly trap.",
+      "type": "movie"
+    },
+    {
+      "id": "4",
+      "title": "2020 Oscars scorecard",
+      "description": "Once Upon a Time’ still out front but watch out for ‘1917’ and ‘Parasite’",
+      "type": "status"
     }
   ]
 }

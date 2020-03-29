@@ -18,6 +18,7 @@ open class GenericAdapter(private val listCommon: MutableList<GenericItemViewHol
     var onItemClickListener: ((pos: Int, data: Any?, view: View) -> Unit?)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GenericViewHolder {
+        //TODO: Handle viewtype -1
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding: ViewDataBinding = DataBindingUtil.inflate(
             layoutInflater, viewType, parent, false

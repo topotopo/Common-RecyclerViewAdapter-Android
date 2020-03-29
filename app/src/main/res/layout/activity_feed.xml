@@ -5,7 +5,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".feed.FeedActivity">
+        tools:context=".feed.presentation.FeedActivity">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
