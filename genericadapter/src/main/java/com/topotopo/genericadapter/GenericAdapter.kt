@@ -12,10 +12,17 @@ import android.view.View
  * Creates a new GenericAdapter instance
  * @param listCommon list of item with the declared model and layout id
  */
-open class GenericAdapter(private val listCommon: MutableList<GenericItemViewHolder<*>>, private val variableId: Int) :
+abstract class GenericAdapter(
+    private val listCommon: MutableList<GenericItemViewHolder<*>>,
+    private val variableId: Int
+) :
     RecyclerView.Adapter<GenericViewHolder>() {
 
-    var onItemClickListener: ((pos: Int, data: Any?, view: View) -> Unit?)? = null
+    private lateinit var onItemClickListener: (pos: Int, data: Any?, view: View) -> Unit?
+
+    fun setItemClickListener(onItemClickListener: (pos: Int, data: Any?, view: View) -> Unit?) {
+        this.onItemClickListener = onItemClickListener
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GenericViewHolder {
         //TODO: Handle viewtype -1

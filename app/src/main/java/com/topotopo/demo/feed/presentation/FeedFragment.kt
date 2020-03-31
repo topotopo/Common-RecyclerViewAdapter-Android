@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.topotopo.demo.BR
 import com.topotopo.demo.R
+import com.topotopo.demo.core.AppAdapter
 import com.topotopo.demo.databinding.FragmentFeedBinding
 import com.topotopo.genericadapter.GenericAdapter
 import com.topotopo.genericadapter.GenericItemViewHolder
@@ -41,11 +42,12 @@ class FeedFragment : Fragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = GenericAdapter(
+        adapter = AppAdapter(
             sampleMovieList,
             BR.data
         )
-        adapter.onItemClickListener = { pos, data, view ->
+
+        adapter.setItemClickListener { pos, data, view ->
             Toast.makeText(
                 context,
                 "Item clicked $pos",
