@@ -19,9 +19,6 @@ abstract class CommonRecyclerViewAdapter(
 
     private lateinit var onItemClickListener: (pos: Int, data: Any?, view: View) -> Unit
 
-    /**
-     * Sets a listener invoked when an item is clicked
-     */
     fun setItemClickListener(onItemClickListener: (pos: Int, data: Any?, view: View) -> Unit) {
         this.onItemClickListener = onItemClickListener
     }
