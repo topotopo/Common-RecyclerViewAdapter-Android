@@ -15,7 +15,9 @@ class CommonViewHolder(private val binding: ViewDataBinding) :
      * @param commonItemHolder to bind
      */
     fun bind(commonItemHolder: CommonItemHolder<*>) {
-        binding.setVariable(commonItemHolder.variableId, commonItemHolder.data)
+        commonItemHolder.variableId?.let { varId ->
+            binding.setVariable(varId, commonItemHolder.data)
+        }
         binding.executePendingBindings()
     }
 }

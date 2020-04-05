@@ -5,5 +5,5 @@ import com.topotopo.genericadapter.CommonItemHolder
 
 class Empty(override var data: Any?,
             override var layoutId: Int = -1,
-            override var variableId: Int = BR.data) :
+            override var variableId: Int? = BR.data) :
     CommonItemHolder<Any>
