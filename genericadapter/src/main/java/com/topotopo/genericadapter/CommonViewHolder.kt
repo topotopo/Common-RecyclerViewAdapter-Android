@@ -10,12 +10,12 @@ class CommonViewHolder(private val binding: ViewDataBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     /**
-     * Binds the declared model [CommonItem.data]
-     * wrapped by [CommonItem] to the layout
-     * @param commonItem to bind
+     * Binds the declared model [CommonItemHolder.data]
+     * wrapped by [CommonItemHolder] to the layout
+     * @param commonItemHolder to bind
      */
-    fun bind(commonItem: CommonItem<*>) {
-        binding.setVariable(commonItem.variableId, commonItem.data)
+    fun bind(commonItemHolder: CommonItemHolder<*>) {
+        binding.setVariable(commonItemHolder.variableId, commonItemHolder.data)
         binding.executePendingBindings()
     }
 }

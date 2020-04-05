@@ -10,10 +10,10 @@ import android.view.View
 /**
  * A generic adapter to be used in RecyclerView with different models and UI @constructor
  * Creates a new GenericAdapter instance
- * @param listCommon list of item with the declared model and layout id
+ * @param listCommonHolder list of item with the declared model and layout id
  */
 abstract class CommonRecyclerViewAdapter(
-    private val listCommon: MutableList<CommonItem<*>>
+    private val listCommonHolder: MutableList<CommonItemHolder<*>>
 ) :
     RecyclerView.Adapter<CommonViewHolder>() {
 
@@ -33,18 +33,19 @@ abstract class CommonRecyclerViewAdapter(
     }
 
     override fun getItemCount(): Int {
-        return listCommon.size
+        return listCommonHolder.size
     }
 
     override fun onBindViewHolder(holder: CommonViewHolder, position: Int) {
-        holder.bind(listCommon[position])//TODO: Multiple different variable ID's
+        holder.bind(listCommonHolder[position])
+        listCommonHolder[position].onBindViewHolder(holder.itemView)
         holder.itemView.setOnClickListener {
-            onItemClickListener.invoke(position, listCommon[position].data, holder.itemView)
+            onItemClickListener.invoke(position, listCommonHolder[position].data, holder.itemView)
         }
     }
 
     override fun getItemViewType(position: Int): Int {
-        return listCommon[position].layoutId
+        return listCommonHolder[position].layoutId
     }
 
 }

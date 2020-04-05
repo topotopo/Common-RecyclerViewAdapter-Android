@@ -1,8 +1,8 @@
 package com.topotopo.demo.core
 
 import com.topotopo.genericadapter.CommonRecyclerViewAdapter
-import com.topotopo.genericadapter.CommonItem
+import com.topotopo.genericadapter.CommonItemHolder
 
 class AppRecyclerViewAdapter(
-    listCommon: MutableList<CommonItem<*>>
-) : CommonRecyclerViewAdapter(listCommon)
+    listCommonHolder: MutableList<CommonItemHolder<*>>
+) : CommonRecyclerViewAdapter(listCommonHolder)

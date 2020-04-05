@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.topotopo.demo.R
 import com.topotopo.demo.core.AppRecyclerViewAdapter
 import com.topotopo.demo.databinding.FragmentFeedBinding
-import com.topotopo.genericadapter.CommonItem
+import com.topotopo.genericadapter.CommonItemHolder
 import com.topotopo.genericadapter.CommonRecyclerViewAdapter
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.KoinComponent
@@ -20,7 +20,7 @@ import org.koin.core.KoinComponent
 class FeedFragment : Fragment(),
     KoinComponent {
 
-    private val sampleMovieList = mutableListOf<CommonItem<*>>()
+    private val sampleMovieList = mutableListOf<CommonItemHolder<*>>()
     private lateinit var binding: FragmentFeedBinding
     private lateinit var recyclerViewAdapter: CommonRecyclerViewAdapter
 
