@@ -12,35 +12,34 @@ import android.view.View
  * Creates a new GenericAdapter instance
  * @param listCommon list of item with the declared model and layout id
  */
-abstract class GenericAdapter(
-    private val listCommon: MutableList<GenericItemViewHolder<*>>,
-    private val variableId: Int
+abstract class CommonRecyclerViewAdapter(
+    private val listCommon: MutableList<CommonItem<*>>
 ) :
-    RecyclerView.Adapter<GenericViewHolder>() {
+    RecyclerView.Adapter<CommonViewHolder>() {
 
-    private lateinit var onItemClickListener: (pos: Int, data: Any?, view: View) -> Unit?
+    private lateinit var onItemClickListener: (pos: Int, data: Any?, view: View) -> Unit
 
-    fun setItemClickListener(onItemClickListener: (pos: Int, data: Any?, view: View) -> Unit?) {
+    fun setItemClickListener(onItemClickListener: (pos: Int, data: Any?, view: View) -> Unit) {
         this.onItemClickListener = onItemClickListener
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GenericViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommonViewHolder {
         //TODO: Handle viewtype -1
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding: ViewDataBinding = DataBindingUtil.inflate(
             layoutInflater, viewType, parent, false
         )
-        return GenericViewHolder(binding, variableId)
+        return CommonViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
         return listCommon.size
     }
 
-    override fun onBindViewHolder(holder: GenericViewHolder, position: Int) {
-        holder.bind(listCommon[position])
+    override fun onBindViewHolder(holder: CommonViewHolder, position: Int) {
+        holder.bind(listCommon[position])//TODO: Multiple different variable ID's
         holder.itemView.setOnClickListener {
-            onItemClickListener?.invoke(position, listCommon[position].data, holder.itemView)
+            onItemClickListener.invoke(position, listCommon[position].data, holder.itemView)
         }
     }
 

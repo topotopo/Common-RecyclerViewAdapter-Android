@@ -9,21 +9,20 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.topotopo.demo.BR
 import com.topotopo.demo.R
-import com.topotopo.demo.core.AppAdapter
+import com.topotopo.demo.core.AppRecyclerViewAdapter
 import com.topotopo.demo.databinding.FragmentFeedBinding
-import com.topotopo.genericadapter.GenericAdapter
-import com.topotopo.genericadapter.GenericItemViewHolder
+import com.topotopo.genericadapter.CommonItem
+import com.topotopo.genericadapter.CommonRecyclerViewAdapter
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.KoinComponent
 
 class FeedFragment : Fragment(),
     KoinComponent {
 
-    private val sampleMovieList = mutableListOf<GenericItemViewHolder<*>>()
+    private val sampleMovieList = mutableListOf<CommonItem<*>>()
     private lateinit var binding: FragmentFeedBinding
-    private lateinit var adapter: GenericAdapter
+    private lateinit var recyclerViewAdapter: CommonRecyclerViewAdapter
 
     private val feedViewModel: FeedViewModel by sharedViewModel()
 
@@ -42,12 +41,11 @@ class FeedFragment : Fragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = AppAdapter(
-            sampleMovieList,
-            BR.data
+        recyclerViewAdapter = AppRecyclerViewAdapter(
+            sampleMovieList
         )
 
-        adapter.setItemClickListener { pos, data, view ->
+        recyclerViewAdapter.setItemClickListener { pos, data, view ->
             Toast.makeText(
                 context,
                 "Item clicked $pos",
@@ -56,7 +54,7 @@ class FeedFragment : Fragment(),
         }
         binding.rvFeed.layoutManager =
             LinearLayoutManager(context)
-        binding.rvFeed.adapter = adapter
+        binding.rvFeed.adapter = recyclerViewAdapter
 
         addObservers()
     }
@@ -65,7 +63,7 @@ class FeedFragment : Fragment(),
         feedViewModel.feedList.observe(this, Observer {
             sampleMovieList.clear()
             sampleMovieList.addAll(it)
-            adapter.notifyDataSetChanged()
+            recyclerViewAdapter.notifyDataSetChanged()
         })
     }
 }
