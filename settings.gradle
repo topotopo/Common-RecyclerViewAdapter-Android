@@ -1,2 +1,2 @@
-include ':app', ':genericadapter'
+include ':app', ':commonadapter'
 rootProject.name='MaxApp'
