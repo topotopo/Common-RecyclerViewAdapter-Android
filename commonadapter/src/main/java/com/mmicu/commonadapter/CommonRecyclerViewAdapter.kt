@@ -1,11 +1,8 @@
 package com.mmicu.commonadapter
 
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
-import android.view.LayoutInflater
-import android.view.View
 
 /**
  * A generic adapter to be used in RecyclerView with different models and UI @constructor
@@ -13,42 +10,31 @@ import android.view.View
  * @param listCommonHolder list of item with the declared model and layout id
  */
 abstract class CommonRecyclerViewAdapter(
-    private val listCommonHolder: MutableList<CommonItemHolder<*>>
-) :
-    RecyclerView.Adapter<CommonViewHolder>() {
+    listCommonHolder: MutableList<CommonItemHolder<*>>
+) : RecyclerView.Adapter<CommonViewHolder>() {
 
-    private lateinit var onItemClickListener: (pos: Int, data: Any?, view: View) -> Unit
+    private val commonRecyclerViewAdapter = CommonRecyclerViewAdapterImpl(listCommonHolder)
 
     /**
      * Sets a listener invoked when an item is clicked
      */
     fun setItemClickListener(onItemClickListener: (pos: Int, data: Any?, view: View) -> Unit) {
-        this.onItemClickListener = onItemClickListener
+        commonRecyclerViewAdapter.setItemClickListener(onItemClickListener)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommonViewHolder {
-        //TODO: Handle viewtype -1
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val binding: ViewDataBinding = DataBindingUtil.inflate(
-            layoutInflater, viewType, parent, false
-        )
-        return CommonViewHolder(binding)
+        return commonRecyclerViewAdapter.onCreateViewHolder(parent, viewType)
     }
 
     override fun getItemCount(): Int {
-        return listCommonHolder.size
+        return commonRecyclerViewAdapter.getItemCount()
     }
 
     override fun onBindViewHolder(holder: CommonViewHolder, position: Int) {
-        holder.bind(listCommonHolder[position])
-        listCommonHolder[position].onBindViewHolder(holder.itemView)
-        holder.itemView.setOnClickListener {
-            onItemClickListener.invoke(position, listCommonHolder[position].data, holder.itemView)
-        }
+        return commonRecyclerViewAdapter.onBindViewHolder(holder, position)
     }
 
     override fun getItemViewType(position: Int): Int {
-        return listCommonHolder[position].layoutId
+        return commonRecyclerViewAdapter.getItemViewType(position)
     }
-
 }
