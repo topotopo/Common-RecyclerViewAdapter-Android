@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mmicu.commonadapter.CommonItemHolder
 import com.mmicu.commonadapter.CommonRecyclerViewAdapter
+import com.mmicu.commonadapter.CommonRecyclerViewAdapterImpl
 import com.mmicu.demo.R
 import com.mmicu.demo.core.AppRecyclerViewAdapter
 import com.mmicu.demo.databinding.FragmentFeedBinding
@@ -22,7 +23,7 @@ class FeedFragment : Fragment(),
 
     private val sampleMovieList = mutableListOf<CommonItemHolder<*>>()
     private lateinit var binding: FragmentFeedBinding
-    private lateinit var recyclerViewAdapterImpl: CommonRecyclerViewAdapter
+    private lateinit var recyclerViewAdapter: CommonRecyclerViewAdapter
 
     private val feedViewModel: FeedViewModel by sharedViewModel()
 
@@ -40,12 +41,12 @@ class FeedFragment : Fragment(),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        recyclerViewAdapterImpl = AppRecyclerViewAdapter(
+        
+        recyclerViewAdapter = AppRecyclerViewAdapter(
             sampleMovieList
         )
 
-        recyclerViewAdapterImpl.setItemClickListener { pos, data, view ->
+        recyclerViewAdapter.setItemClickListener { pos, data, view ->
             Toast.makeText(
                 context,
                 "Item clicked $pos",
@@ -54,7 +55,7 @@ class FeedFragment : Fragment(),
         }
         binding.rvFeed.layoutManager =
             LinearLayoutManager(context)
-        binding.rvFeed.adapter = recyclerViewAdapterImpl
+        binding.rvFeed.adapter = recyclerViewAdapter
 
         addObservers()
     }
@@ -63,7 +64,7 @@ class FeedFragment : Fragment(),
         feedViewModel.feedList.observe(this, Observer {
             sampleMovieList.clear()
             sampleMovieList.addAll(it)
-            recyclerViewAdapterImpl.notifyDataSetChanged()
+            recyclerViewAdapter.notifyDataSetChanged()
         })
     }
 }

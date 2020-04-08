@@ -3,7 +3,7 @@
     {
       "id": "0",
       "title": "Parasite",
-      "imageUrl": "",
+      "imageUrl": "https://miro.medium.com/max/1400/1*cNkte5WPBwnr3jFqetb5gA.jpeg",
       "description": "All unemployed, Ki-taek and his family take peculiar interest in the wealthy and glamorous Parks, as they ingratiate themselves into their lives and get entangled in an unexpected incident.",
       "type": "movie"
     },
@@ -16,14 +16,14 @@
     {
       "id": "2",
       "title": "Little Women",
-      "imageUrl": "",
+      "imageUrl": "https://consequenceofsound.net/wp-content/uploads/2019/08/greta-gerwig-little-women.jpg",
       "description": "Jo March reflects back and forth on her life, telling the beloved story of the March sisters - four young women each determined to live life on their own terms.",
       "type": "movie"
     },
     {
       "id": "3",
       "title": "1917",
-      "imageUrl": "",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMGQ0N2Y3MzQtNWVhYi00OWYwLWFlZmQtYTkyOTliYzI4YzJmXkEyXkFqcGdeQWFybm8@._V1_.jpg",
       "description": "Two young British soldiers during the First World War are given an impossible mission: deliver a message deep in enemy territory that will stop 1,600 men, and one of the soldiers' brothers, from walking straight into a deadly trap.",
       "type": "movie"
     },

@@ -5,8 +5,14 @@ import androidx.databinding.ViewDataBinding
 /**
  * A generic RecyclerView.ViewHolder for the [CommonRecyclerViewAdapterImpl]
  */
-internal class CommonViewHolderImpl(private val binding: ViewDataBinding) :
+class CommonViewHolderImpl private constructor(private val binding: ViewDataBinding) :
     CommonViewHolder(binding) {
+
+    companion object {
+        fun initialize(binding: ViewDataBinding): CommonViewHolderImpl {
+            return CommonViewHolderImpl(binding)
+        }
+    }
 
     /**
      * Binds the declared model [CommonItemHolder.data]

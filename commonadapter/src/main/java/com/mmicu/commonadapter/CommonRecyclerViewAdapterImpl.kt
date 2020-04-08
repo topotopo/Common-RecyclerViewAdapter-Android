@@ -6,9 +6,15 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
-internal class CommonRecyclerViewAdapterImpl(
+class CommonRecyclerViewAdapterImpl private constructor(
     private val listCommonHolder: MutableList<CommonItemHolder<*>>
 ) {
+
+    companion object {
+        fun initialize(listCommonHolder: MutableList<CommonItemHolder<*>>): CommonRecyclerViewAdapterImpl {
+            return CommonRecyclerViewAdapterImpl(listCommonHolder)
+        }
+    }
 
     private lateinit var onItemClickListener: (pos: Int, data: Any?, view: View) -> Unit
 
@@ -22,7 +28,7 @@ internal class CommonRecyclerViewAdapterImpl(
         val binding: ViewDataBinding = DataBindingUtil.inflate(
             layoutInflater, viewType, parent, false
         )
-        return CommonViewHolderImpl(binding)
+        return CommonViewHolderImpl.initialize(binding)
     }
 
     fun getItemCount(): Int {

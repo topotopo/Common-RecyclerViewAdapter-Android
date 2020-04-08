@@ -13,7 +13,7 @@ abstract class CommonRecyclerViewAdapter(
     listCommonHolder: MutableList<CommonItemHolder<*>>
 ) : RecyclerView.Adapter<CommonViewHolder>() {
 
-    private val commonRecyclerViewAdapter = CommonRecyclerViewAdapterImpl(listCommonHolder)
+    private val commonRecyclerViewAdapter = CommonRecyclerViewAdapterImpl.initialize(listCommonHolder)
 
     /**
      * Sets a listener invoked when an item is clicked
