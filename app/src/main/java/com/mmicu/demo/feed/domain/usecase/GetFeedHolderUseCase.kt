@@ -1,7 +1,8 @@
 package com.mmicu.demo.feed.domain.usecase
 
-import com.mmicu.commonadapter.CommonItemHolder
+import com.mmicu.demo.feed.domain.model.FeedModel
+import com.mmicu.demo.utils.Result
 
 interface GetFeedHolderUseCase {
-    suspend fun invoke(): List<CommonItemHolder<*>>
+    suspend fun invoke(): Result<List<FeedModel?>>
 }
