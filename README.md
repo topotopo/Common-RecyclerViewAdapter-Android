@@ -1,20 +1,66 @@
-# Generic Adapter
+# Common Adapter
 
-This is a sample app using a generic adapter. GenericAdapter is is an extension of Recyclerview adapter that is designed to hold and bind different data models for different viewtypes without creating different binding logics for each view by following a specific convention.
+A generic RecyclerView Adapter. 
+Helps create a list of different views and / or different models to bind without the boilerplate code in the RecyclerView Adapter callbacks.
 
-## How to use
+Current version: 1.0.1-snapshot01
 
-### Creating the item layout
-When creating the item xml layouts, declare the data to bind with the variable name as "data."
+## Setup
+In your project’s root build.gradle, check if JCenter repository is added.
+```
+buildscript {
+    repositories {
+        jcenter()     
+    }
+}
+```
 
-### Creating GenericItemViewHolders
-For each type of view, you will create a GenericItemViewHolder. GenericItemViewHolder should holds the view's corresponding data model and layout id to bind.
+In your app's build.gradle, add the dependency.
+```
+implementation 'com.mmicu.commonadapter:commonadapter:1.0.1-snapshot01'
+```
 
-### Use GenericAdapter as you use a RecyclerView adapter
-Use GenericAdadpter as the adapter in the RecyclerView list. GenericAdapter will only accept a list of GenericItemViewHolders.
+## Quick Start
 
-## How does it work?
-<To Do>
+### Create a CommonItemHolder for every view type.
+```
+data class StatusFeedItemHolder(
+    override var data: StatusModel?,
+    override var layoutId: Int = R.layout.item_feed_status,
+    override var variableId: Int?
+) : CommonItemHolder<StatusModel>
+```
+
+### Extend CommonRecyclerViewAdapter when creating an adapter. 
+```
+class AppRecyclerViewAdapter(
+    listCommonHolder: MutableList<CommonItemHolder<*>>
+) : CommonRecyclerViewAdapter(listCommonHolder)
+```
+
+### Initialise your adapter with the list of CommonItems.
+```
+private val sampleMovieList = mutableListOf<CommonItemHolder<*>>()
+private lateinit var recyclerViewAdapter: CommonRecyclerViewAdapter
+
+recyclerViewAdapter = AppRecyclerViewAdapter(
+            sampleMovieList
+        )
+```
+
+### Adding an item click listener.
+```
+ recyclerViewAdapter.setItemClickListener { pos, data, view ->
+            //Code here
+        }
+```
+
+### License
+```
+ Apache License
+ Version 2.0, January 2004
+ http://www.apache.org/licenses/
+```
 
 ## Authors
-Maxine Micu - Initial Work
+```Maxine Micu, maxine.micu@gmail.com```
