@@ -1,7 +1,7 @@
 # Common Adapter
 
 A generic RecyclerView Adapter. 
-Helps create a list of different views and / or different models to bind without the boilerplate code in the RecyclerView Adapter callbacks.
+Helps create a list of different views and / or different models to bind without the boilerplate code in the RecyclerView Adapter callbacks and without the need to create separate adapters for every list.
 
 Current version: 1.0.1-snapshot01
 
