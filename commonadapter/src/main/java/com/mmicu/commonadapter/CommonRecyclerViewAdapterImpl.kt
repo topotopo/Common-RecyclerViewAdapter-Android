@@ -16,7 +16,7 @@ class CommonRecyclerViewAdapterImpl private constructor(
         }
     }
 
-    private lateinit var onItemClickListener: (pos: Int, data: Any?, view: View) -> Unit
+    private var onItemClickListener: ((pos: Int, data: Any?, view: View) -> Unit)? = null
 
     fun setItemClickListener(onItemClickListener: (pos: Int, data: Any?, view: View) -> Unit) {
         this.onItemClickListener = onItemClickListener
@@ -39,7 +39,7 @@ class CommonRecyclerViewAdapterImpl private constructor(
         holder.bind(listCommonHolder[position])
         listCommonHolder[position].onBindViewHolder(holder.itemView)
         holder.itemView.setOnClickListener {
-            onItemClickListener.invoke(position, listCommonHolder[position].data, holder.itemView)
+            onItemClickListener?.invoke(position, listCommonHolder[position].data, holder.itemView)
         }
     }
 

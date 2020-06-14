@@ -44,13 +44,14 @@ class FeedFragment : Fragment(), KoinComponent {
                 sampleMovieList
             )
 
-        recyclerViewAdapter.setItemClickListener { pos, data, view ->
+        recyclerViewAdapter.setItemClickListener { pos, _, _ ->
             Toast.makeText(
                 context,
                 "Item clicked $pos",
                 Toast.LENGTH_LONG
             ).show()
         }
+
         binding.rvFeed.layoutManager =
             LinearLayoutManager(context)
         binding.rvFeed.adapter = recyclerViewAdapter
