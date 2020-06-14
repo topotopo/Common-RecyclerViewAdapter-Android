@@ -3,10 +3,10 @@ package com.mmicu.demo.feed.domain.usecase
 import com.mmicu.demo.BR
 import com.mmicu.demo.feed.domain.model.MovieModel
 import com.mmicu.demo.feed.domain.model.StatusModel
-import com.mmicu.demo.feed.presentation.itemviewholder.Empty
-import com.mmicu.demo.feed.presentation.itemviewholder.MovieFeedItemHolder
-import com.mmicu.demo.feed.presentation.itemviewholder.StatusFeedItemHolder
-import com.mmicu.demo.utils.Result
+import com.mmicu.demo.feed.presentation.viewholder.Empty
+import com.mmicu.demo.feed.presentation.viewholder.MovieFeedItemHolder
+import com.mmicu.demo.feed.presentation.viewholder.StatusFeedItemHolder
+import com.mmicu.demo.feed.data.response.Result
 import com.mmicu.commonadapter.CommonItemHolder
 
 class GetFeedHolderUseCaseImpl(private val getFeedUseCase: GetFeedUseCase) : GetFeedHolderUseCase {

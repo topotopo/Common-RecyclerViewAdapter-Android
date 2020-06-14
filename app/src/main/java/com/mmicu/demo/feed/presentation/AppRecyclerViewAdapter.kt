@@ -1,4 +1,4 @@
-package com.mmicu.demo.core
+package com.mmicu.demo.feed.presentation
 
 import com.mmicu.commonadapter.CommonItemHolder
 import com.mmicu.commonadapter.CommonRecyclerViewAdapter

@@ -1,6 +1,8 @@
-package com.mmicu.demo.utils
+package com.mmicu.demo.feed.domain.repository
 
 import android.util.Log
+import com.mmicu.demo.feed.data.response.BaseResponse
+import com.mmicu.demo.feed.data.response.Result
 
 
 open class BaseRepository {

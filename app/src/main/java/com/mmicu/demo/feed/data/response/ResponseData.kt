@@ -1,4 +1,4 @@
-package com.mmicu.demo.utils
+package com.mmicu.demo.feed.data.response
 
 import java.lang.Exception
 

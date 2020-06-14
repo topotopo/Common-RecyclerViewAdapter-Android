@@ -2,7 +2,7 @@ package com.mmicu.demo.feed.data.network
 
 import android.content.Context
 import com.google.gson.Gson
-import com.mmicu.demo.feed.data.model.GetFeedResponse
+import com.mmicu.demo.feed.data.response.GetFeedResponse
 import com.mmicu.demo.utils.FakeJsonFileReader
 import retrofit2.http.GET
 import retrofit2.mock.BehaviorDelegate

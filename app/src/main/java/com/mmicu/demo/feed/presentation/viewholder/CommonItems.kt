@@ -1,4 +1,4 @@
-package com.mmicu.demo.feed.presentation.itemviewholder
+package com.mmicu.demo.feed.presentation.viewholder
 
 import android.view.View
 import com.bumptech.glide.Glide

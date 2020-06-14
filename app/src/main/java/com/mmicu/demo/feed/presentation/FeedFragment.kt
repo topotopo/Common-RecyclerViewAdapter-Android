@@ -11,15 +11,12 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mmicu.commonadapter.CommonItemHolder
 import com.mmicu.commonadapter.CommonRecyclerViewAdapter
-import com.mmicu.commonadapter.CommonRecyclerViewAdapterImpl
 import com.mmicu.demo.R
-import com.mmicu.demo.core.AppRecyclerViewAdapter
 import com.mmicu.demo.databinding.FragmentFeedBinding
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.KoinComponent
 
-class FeedFragment : Fragment(),
-    KoinComponent {
+class FeedFragment : Fragment(), KoinComponent {
 
     private val sampleMovieList = mutableListOf<CommonItemHolder<*>>()
     private lateinit var binding: FragmentFeedBinding
@@ -41,10 +38,11 @@ class FeedFragment : Fragment(),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
-        recyclerViewAdapter = AppRecyclerViewAdapter(
-            sampleMovieList
-        )
+
+        recyclerViewAdapter =
+            AppRecyclerViewAdapter(
+                sampleMovieList
+            )
 
         recyclerViewAdapter.setItemClickListener { pos, data, view ->
             Toast.makeText(

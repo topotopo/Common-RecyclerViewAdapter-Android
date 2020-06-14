@@ -5,9 +5,9 @@ import com.mmicu.demo.feed.domain.model.FeedModel
 import com.mmicu.demo.feed.domain.model.MovieModel
 import com.mmicu.demo.feed.domain.model.StatusModel
 import com.mmicu.demo.feed.domain.repository.FeedRepository
-import com.mmicu.demo.utils.BaseRepository
-import com.mmicu.demo.utils.Result
-import com.mmicu.demo.utils.BaseResponse
+import com.mmicu.demo.feed.domain.repository.BaseRepository
+import com.mmicu.demo.feed.data.response.Result
+import com.mmicu.demo.feed.data.response.BaseResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

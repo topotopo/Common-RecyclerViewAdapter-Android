@@ -1,4 +1,4 @@
-package com.mmicu.demo.feed.data.model
+package com.mmicu.demo.feed.data.response
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,4 +1,4 @@
-package com.mmicu.demo.feed.presentation.itemviewholder
+package com.mmicu.demo.feed.presentation.viewholder
 
 import com.mmicu.demo.BR
 import com.mmicu.commonadapter.CommonItemHolder
