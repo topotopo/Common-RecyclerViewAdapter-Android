@@ -76,7 +76,7 @@ dependencies {
 
     implementation project(':commonadapter')
 
-    implementation 'com.mmicu.commonadapter:commonadapter:1.0.1-snapshot01'
+    implementation 'com.mmicu.commonadapter:commonadapter:1.0.2'
 
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
