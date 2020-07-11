@@ -1,9 +1,11 @@
-# Common Adapter
+# Common RecyclerView Adapter
 
-A generic RecyclerView Adapter. 
-Helps create a list of different views and / or different models to bind without the boilerplate code in the RecyclerView Adapter callbacks and without the need to create separate adapters for every list.
+* Create a list of different views with its different or the same set of data to bind without the boilerplate code in the RecyclerView Adapter.
+* Use a single adapter for different lists in your entire app.
 
 Current version: 1.0.1-snapshot01
+
+![Image of Sample App](https://github.com/topotopo/common-recyclerview-adapter-android/blob/master/screenshot.png)
 
 ## Setup
 In your project’s root build.gradle, check if JCenter repository is added.
