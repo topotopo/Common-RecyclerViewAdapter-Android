@@ -9,5 +9,6 @@ data class Feed(
     val title: String,
     val description: String,
     val type: String,
-    val imageUrl: String
+    val imageUrl: String,
+    val artist: String
 )

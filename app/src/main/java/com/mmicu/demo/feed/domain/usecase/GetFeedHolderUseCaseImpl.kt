@@ -8,6 +8,8 @@ import com.mmicu.demo.feed.presentation.viewholder.MovieFeedItemHolder
 import com.mmicu.demo.feed.presentation.viewholder.StatusFeedItemHolder
 import com.mmicu.demo.feed.data.response.Result
 import com.mmicu.commonadapter.CommonItemHolder
+import com.mmicu.demo.feed.domain.model.MusicModel
+import com.mmicu.demo.feed.presentation.viewholder.MusicItemHolder
 
 class GetFeedHolderUseCaseImpl(private val getFeedUseCase: GetFeedUseCase) : GetFeedHolderUseCase {
     override suspend fun invoke(): List<CommonItemHolder<*>> {
@@ -23,6 +25,12 @@ class GetFeedHolderUseCaseImpl(private val getFeedUseCase: GetFeedUseCase) : Get
                     }
                     is StatusModel -> {
                         StatusFeedItemHolder(
+                            data = it,
+                            variableId = BR.data
+                        )
+                    }
+                    is MusicModel -> {
+                        MusicItemHolder(
                             data = it,
                             variableId = BR.data
                         )

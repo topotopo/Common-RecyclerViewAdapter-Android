@@ -13,7 +13,7 @@
     <androidx.cardview.widget.CardView
         android:layout_marginBottom="@dimen/feed_item_space"
         android:layout_width="match_parent"
-        app:cardElevation="1dp"
+        app:cardElevation="0dp"
         android:layout_height="wrap_content">
 
         <LinearLayout

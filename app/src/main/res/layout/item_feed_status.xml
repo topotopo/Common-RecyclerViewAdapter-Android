@@ -11,7 +11,7 @@
     </data>
 
     <androidx.cardview.widget.CardView
-        app:cardElevation="2dp"
+        app:cardElevation="0dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/feed_item_space">
@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@color/colorYellowPastel"
             android:paddingTop="@dimen/feed_margin_vertical"
             android:paddingBottom="@dimen/feed_margin_vertical">
 

@@ -15,20 +15,28 @@
     },
     {
       "id": "2",
+      "title": "Still Into You",
+      "artist": "Paramore",
+      "description": "It became one of Paramore's most commercially successful singles to date in the United States.",
+      "type": "music",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/be/Cover_paramore%27s_song_still_into_you.jpg"
+    },
+    {
+      "id": "3",
       "title": "Little Women",
       "imageUrl": "https://consequenceofsound.net/wp-content/uploads/2019/08/greta-gerwig-little-women.jpg",
       "description": "Jo March reflects back and forth on her life, telling the beloved story of the March sisters - four young women each determined to live life on their own terms.",
       "type": "movie"
     },
     {
-      "id": "3",
+      "id": "4",
       "title": "1917",
       "imageUrl": "https://m.media-amazon.com/images/M/MV5BMGQ0N2Y3MzQtNWVhYi00OWYwLWFlZmQtYTkyOTliYzI4YzJmXkEyXkFqcGdeQWFybm8@._V1_.jpg",
       "description": "Two young British soldiers during the First World War are given an impossible mission: deliver a message deep in enemy territory that will stop 1,600 men, and one of the soldiers' brothers, from walking straight into a deadly trap.",
       "type": "movie"
     },
     {
-      "id": "4",
+      "id": "5",
       "title": "2020 Oscars scorecard",
       "description": "Once Upon a Time’ still out front but watch out for ‘1917’ and ‘Parasite’",
       "type": "status"

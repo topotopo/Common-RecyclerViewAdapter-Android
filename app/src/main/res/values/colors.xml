@@ -6,5 +6,7 @@
 
     <color name="colorFeedGrass">#51B350</color>
     <color name="colorFeedSky">#55B0DC</color>
+    <color name="colorFeedOrange">#EFAB51</color>
     <color name="colorGray">#E4E7E8</color>
+    <color name="colorYellowPastel">#FCF3E5</color>
 </resources>
