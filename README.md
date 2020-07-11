@@ -1,10 +1,11 @@
 # Common RecyclerView Adapter
 
 * Create a list of different views with its different or the same set of data to bind without the boilerplate code in the RecyclerView Adapter.
-* Use a single adapter for different lists in your entire app.
+* Use a single adapter for all the recyclerviews in your app.
+* Current version: 1.0.1-snapshot01
+* Built on top of RecyclerView, Databinding
 
-Current version: 1.0.1-snapshot01
-
+## Sample App
 ![Image of Sample App](https://github.com/topotopo/common-recyclerview-adapter-android/blob/master/screenshot.png)
 
 ## Setup
@@ -33,14 +34,14 @@ data class StatusFeedItemHolder(
 ) : CommonItemHolder<StatusModel>
 ```
 
-### Extend CommonRecyclerViewAdapter when creating an adapter. 
+### Extend CommonRecyclerViewAdapter. 
 ```
 class AppRecyclerViewAdapter(
     listCommonHolder: MutableList<CommonItemHolder<*>>
 ) : CommonRecyclerViewAdapter(listCommonHolder)
 ```
 
-### Initialise your adapter with the list of CommonItems.
+### Initialise the adapter.
 ```
 private val sampleMovieList = mutableListOf<CommonItemHolder<*>>()
 private lateinit var recyclerViewAdapter: CommonRecyclerViewAdapter
@@ -50,7 +51,7 @@ recyclerViewAdapter = AppRecyclerViewAdapter(
         )
 ```
 
-### Adding an item click listener.
+### Optional: Add item click listener.
 ```
  recyclerViewAdapter.setItemClickListener { pos, data, view ->
             //Code here
